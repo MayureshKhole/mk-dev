@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mk-dev-portfolio
+    env: static
+    buildCommand: pnpm install && pnpm --filter @workspace/portfolio run build
+    publishPath: artifacts/portfolio/dist/public
