@@ -4,8 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
-import { Mail, MapPin, ArrowRight, ExternalLink, Code2, Linkedin } from "lucide-react";
+import { Mail, MapPin, ArrowRight, ExternalLink, Code2, Linkedin, Download } from "lucide-react";
 import { SiReact, SiNodedotjs, SiMongodb, SiTypescript, SiNextdotjs, SiRedux, SiFirebase, SiGithub, SiBootstrap, SiTailwindcss, SiJavascript, SiHtml5 } from "react-icons/si";
+import portraitImg from "@assets/mayuresh_portrait.jpg";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,14 @@ function Home() {
                 {link.name}
               </a>
             ))}
+            <a 
+              href="/Mayuresh_Khole_Resume.pdf" 
+              target="_blank" 
+              rel="noreferrer"
+              className="ml-4 px-4 py-2 text-sm font-medium border border-primary/30 text-primary rounded-md hover:bg-primary/10 transition-colors"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </nav>
@@ -66,51 +75,100 @@ function Home() {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
         
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center space-x-2 text-primary font-mono text-sm mb-6">
-              <Code2 className="w-4 h-4" />
-              <span>Full-Stack MERN Developer</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight mb-6">
-              Building robust, scalable full-stack applications that <span className="text-primary relative inline-block">
-                drive business logic
-                <span className="absolute bottom-0 left-0 w-full h-[0.2em] bg-primary/20 -z-10"></span>
-              </span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-              I'm Mayuresh Khole, a Full-Stack MERN Developer with 3+ years of experience architecting scalable web applications, enterprise portals, and AI-driven data pipelines. I specialize in React, Node.js, TypeScript, and MongoDB.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-              <a 
-                href="#projects" 
-                className="inline-flex items-center justify-center h-12 px-6 font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-                data-testid="btn-view-work"
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="md:col-span-7 order-2 md:order-1">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                View My Work
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-              <a 
-                href="#contact" 
-                className="inline-flex items-center justify-center h-12 px-6 font-medium bg-transparent text-foreground border border-border rounded-md hover:bg-secondary transition-colors"
-                data-testid="btn-contact"
+                <div className="flex items-center space-x-2 text-primary font-mono text-sm mb-6">
+                  <Code2 className="w-4 h-4" />
+                  <span>Full-Stack MERN Developer</span>
+                </div>
+                
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight mb-6">
+                  Building robust, scalable full-stack applications that <span className="text-primary relative inline-block">
+                    drive business logic
+                    <span className="absolute bottom-0 left-0 w-full h-[0.2em] bg-primary/20 -z-10"></span>
+                  </span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+                  I'm Mayuresh Khole, a Full-Stack MERN Developer with 3+ years of experience architecting scalable web applications, enterprise portals, and AI-driven data pipelines. I specialize in React, Node.js, TypeScript, and MongoDB.
+                </p>
+                
+                <div className="flex flex-wrap items-center gap-4 mb-12">
+                  <a 
+                    href="#projects" 
+                    className="inline-flex items-center justify-center h-12 px-6 font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+                    data-testid="btn-view-work"
+                  >
+                    View My Work
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                  <a 
+                    href="/Mayuresh_Khole_Resume.pdf" 
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center h-12 px-6 font-medium bg-transparent text-foreground border border-border rounded-md hover:bg-secondary transition-colors"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Resume
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="inline-flex items-center justify-center h-12 px-6 font-medium bg-transparent text-muted-foreground hover:text-foreground transition-colors"
+                    data-testid="btn-contact"
+                  >
+                    Contact Me
+                  </a>
+                </div>
+                
+                <div className="flex items-center text-sm text-muted-foreground font-mono">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Maan, Pune, India
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Animatic Image */}
+            <div className="md:col-span-5 order-1 md:order-2 flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  y: [0, -10, 0]
+                }}
+                transition={{ 
+                  opacity: { duration: 0.6 },
+                  scale: { duration: 0.6 },
+                  y: { 
+                    duration: 6, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }
+                }}
+                className="relative group w-full max-w-[320px] md:max-w-[380px] aspect-[4/5]"
               >
-                Contact Me
-              </a>
+                {/* Background glowing aura */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-violet-500/20 rounded-3xl blur-2xl group-hover:scale-105 transition-transform duration-500 opacity-75" />
+                
+                {/* Image container with border */}
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border border-primary/20 bg-card shadow-2xl shadow-primary/10 group-hover:border-primary/40 transition-colors duration-500">
+                  <img 
+                    src={portraitImg} 
+                    alt="Mayuresh Khole - Full-Stack MERN Developer" 
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent pointer-events-none" />
+                </div>
+              </motion.div>
             </div>
-            
-            <div className="flex items-center text-sm text-muted-foreground font-mono">
-              <MapPin className="w-4 h-4 mr-2" />
-              Maan, Pune, India
-            </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
