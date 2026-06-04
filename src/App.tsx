@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
-import { Mail, MapPin, ChevronDown, ArrowRight, ExternalLink, Code2, Linkedin } from "lucide-react";
+import { Mail, MapPin, ArrowRight, ExternalLink, Code2, Linkedin } from "lucide-react";
 import { SiReact, SiNodedotjs, SiMongodb, SiTypescript, SiNextdotjs, SiRedux, SiFirebase, SiGithub, SiBootstrap, SiTailwindcss, SiJavascript, SiHtml5 } from "react-icons/si";
 
 const queryClient = new QueryClient();
